@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import Quiz from './Quiz';
-import CategoryPage from './CategoryPage';
+
 
 const routing = (
   <Router>
@@ -13,7 +13,7 @@ const routing = (
         <ul>
           <section>
         <li>
-            <Link to="/">Homepage</Link><Link to={`${match.url}/CategoryPage`}>Rendering with React</Link>
+            <Link to="/">Homepage</Link>
         </li>
          <li> <Link to="/Quiz">Quiz</Link>
         </li>
@@ -24,7 +24,6 @@ const routing = (
         </ul>
       <Route exact path="/" component={App} />
       <Route path="/Quiz" component={Quiz} />
-      <Route path="/CategoryPage" component={CategoryPage} />
     </div>
   </Router>
   );
