@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
-
 import com.qa.persistence.domain.Account;
 import com.qa.util.JSONUtil;
 
@@ -24,6 +23,12 @@ public class AccountDBRepository implements AccountRepository {
 	@Inject
 	private JSONUtil util;
 	
+	public String getAccount() {
+		Query query = manager.createQuery("Select a FROM Account a");
+		Collection<Account> accounts = (Collection<Account>) query.getResultList();
+		return util.getJSONForObject(accounts);
+		
+	}
 		
 	@Transactional(REQUIRED)
 	public String createAccount(String accoun) {

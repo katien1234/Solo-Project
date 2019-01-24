@@ -13,15 +13,17 @@ public class Account {
 	private Long accountId;
 	private String username;
 	private String password;
+	private Long highscore;
 	
 	public Account() {
 
 	}
 	
-	public Account(Long accountId, String username, String password) {
+	public Account(Long accountId, String username, String password, Long highscore) {
 		this.accountId = accountId;
 		this.username = username;
 		this.password = password;
+		this.highscore = highscore;
 	}
 
 	public Long getAccountId() {
@@ -43,6 +45,14 @@ public class Account {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Long getHighscore() {
+		return highscore;
+	}
+
+	public void setHighscore(Long highscore) {
+		this.highscore = highscore;
 	}
 	
 	
